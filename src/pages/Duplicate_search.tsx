@@ -1,10 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import LineChart from '../components/charts/LineChart';
 import BarChart from '../components/charts/BarChart';
 import SearchBar from '../components/SearchBar';
 import { downloadCSV } from '../utils/exportCSV.ts';
+import TableComponent from '../components/Table';
 
 const Duplicate_search = () => {
+  const [isSearching, setIsSearching] = useState(false);
+
+  const handleSearchDuplicate = () => {
+    setIsSearching(true);
+    // Simulate search process
+    setTimeout(() => {
+      setIsSearching(false);
+      console.log("Duplicate search completed");
+    }, 2000);
+  };
+
   const handleDownloadCSV = () => {
     const sampleData = [
       { id: 1, name: 'John Doe', email: 'john@example.com', phone: '123-456-7890', status: 'Duplicate', date: '2024-01-15' },
@@ -21,31 +33,16 @@ const Duplicate_search = () => {
     <div className="min-h-screen w-full flex flex-col bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800">
       <main className="flex-1 w-full p-6">
         <div className="w-full max-w-7xl mx-auto">
-          <div className="flex justify-end mb-4 gap-3 items-center">
-            <SearchBar 
-              placeholder="Search for duplicates..."
-              onSearch={(query) => console.log("Searching for:", query)}
-              className="max-w-sm"
-            />
-            <button
-              onClick={handleDownloadCSV}
-              className="px-4 py-2 !bg-green-600 !text-white rounded-lg transition-colors flex items-center gap-2 whitespace-nowrap border border-green-600 shadow-lg hover:!bg-green-700"
+          <div className="flex justify-end mb-4">
+            <button 
+              onClick={handleSearchDuplicate}
+              disabled={isSearching}
+              className="px-4 py-2 rounded-lg transition-colors shadow-md disabled:bg-gray-400 disabled:cursor-not-allowed"
+              style={{ backgroundColor: isSearching ? '#9CA3AF' : '#10B981', color: '#FFFFFF' }}
+              onMouseEnter={(e) => !isSearching && (e.currentTarget.style.backgroundColor = '#036d23ff')}
+              onMouseLeave={(e) => !isSearching && (e.currentTarget.style.backgroundColor = '##059646ff')}
             >
-              <svg
-                className="w-4 h-4"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
-                />
-              </svg>
-              Download CSV
+              {isSearching ? 'Searching...' : 'Search for Duplicate'}
             </button>
           </div>
           <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-xl p-6 border border-slate-200 dark:border-slate-700">
@@ -83,6 +80,7 @@ const Duplicate_search = () => {
                 <h2 className="text-xl font-semibold text-slate-800 dark:text-slate-200 mb-4">
                   Hourly Column Wise
                 </h2>
+                <TableComponent />
               </div>
             </div>
         </div>
