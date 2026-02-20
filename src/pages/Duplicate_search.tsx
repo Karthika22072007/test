@@ -54,7 +54,7 @@ const Duplicate_search = () => {
               {/* 1st Row, 1st Column - Line Chart */}
               <div className="bg-slate-50 dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-slate-700 p-4">
                 <h2 className="text-xl font-semibold text-slate-800 dark:text-slate-200 mb-4">
-                  Hourly leads data
+                  Leads Data & Hourly Breakup
                 </h2>
                 <LineChart />
               </div>
@@ -62,7 +62,7 @@ const Duplicate_search = () => {
               {/* 1st Row, 2nd Column - Bar Chart */}
               <div className="bg-slate-50 dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-slate-700 p-4">
                 <h2 className="text-xl font-semibold text-slate-800 dark:text-slate-200 mb-4">
-                  City Leads
+                  City wise Leads
                 </h2>
                 <BarChart xData={["New York", "London", "Tokyo", "Paris", "Sydney"]} yData={[10, 15, 8, 12, 9]} yAxisName="Total Duplicate" interval={0} />
               </div>
@@ -70,7 +70,7 @@ const Duplicate_search = () => {
               {/* 2nd Row, 1st Column - Bar Chart */}
               <div className="bg-slate-50 dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-slate-700 p-4">
                 <h2 className="text-xl font-semibold text-slate-800 dark:text-slate-200 mb-4">
-                  Hourly Row Wise
+                  Row Duplicates (Hourly)
                 </h2>
                 <BarChart xData={["00:00", "01:00", "02:00", "03:00", "04:00", "05:00", "06:00", "07:00", "08:00", "09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00", "22:00", "23:00"]} yData={[5, 8, 12, 15, 10, 7, 9, 14, 18, 22, 20, 16, 13, 11, 8, 6, 4, 3, 2, 1, 0, 1, 3, 5]} yAxisName="Row Count" />
               </div>
@@ -78,7 +78,7 @@ const Duplicate_search = () => {
               {/* 2nd Row, 2nd Column - Additional Content */}
               <div className="bg-slate-50 dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-slate-700 p-4">
                 <h2 className="text-xl font-semibold text-slate-800 dark:text-slate-200 mb-4">
-                  Hourly Column Wise
+                  Column Duplicates (Hourly)
                 </h2>
                 <TableComponent />
               </div>
