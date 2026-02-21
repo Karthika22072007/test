@@ -24,6 +24,10 @@ export default defineConfig({
         secure: false,
       },
     },
+
+    headers: {
+      "Content-Security-Policy": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https:; frame-src 'self' https://ap-south-1.quicksight.aws.amazon.com https://*.quicksight.aws.amazon.com; frame-ancestors 'self';"
+    }
   },
 
   preview: {
