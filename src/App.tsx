@@ -1,7 +1,7 @@
 import Header from "./components/Header";
 import Form from "./components/Form";
 import Duplicate_search from "./pages/Duplicate_search";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import "./App.css";
 
 function App() {
@@ -12,6 +12,7 @@ function App() {
       <main className="flex-1 w-full p-6">
         <div className="w-full max-w-7xl mx-auto">
           <Routes>
+            <Route path="/" element={<Navigate to="/app2" replace />} />
             <Route path="/" element={
               <>
                 {/* <div className="text-center mb-6">
