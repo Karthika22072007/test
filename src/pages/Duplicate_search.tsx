@@ -1,8 +1,6 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import LineChart from '../components/charts/LineChart';
 import BarChart from '../components/charts/BarChart';
-import SearchBar from '../components/SearchBar';
-import { downloadCSV } from '../utils/exportCSV.ts';
 import TableComponent from '../components/Table';
 
 const Duplicate_search = () => {
@@ -17,17 +15,6 @@ const Duplicate_search = () => {
     }, 2000);
   };
 
-  const handleDownloadCSV = () => {
-    const sampleData = [
-      { id: 1, name: 'John Doe', email: 'john@example.com', phone: '123-456-7890', status: 'Duplicate', date: '2024-01-15' },
-      { id: 2, name: 'Jane Smith', email: 'jane@example.com', phone: '098-765-4321', status: 'Unique', date: '2024-01-16' },
-      { id: 3, name: 'Bob Johnson', email: 'bob@example.com', phone: '555-123-4567', status: 'Duplicate', date: '2024-01-17' },
-      { id: 4, name: 'Alice Brown', email: 'alice@example.com', phone: '111-222-3333', status: 'Unique', date: '2024-01-18' },
-      { id: 5, name: 'Charlie Wilson', email: 'charlie@example.com', phone: '999-888-7777', status: 'Duplicate', date: '2024-01-19' }
-    ];
-    
-    downloadCSV(sampleData, 'duplicate-search-results');
-  };
 
   return (
     <div className="min-h-screen w-full flex flex-col bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800">

@@ -25,7 +25,7 @@ function App() {
                 </div>
               </>
             } />
-            <Route path="/duplicate-search" element={<Duplicate_search />} />
+            <Route path="/duplicatesearch" element={<Duplicate_search />} />
           </Routes>
         </div>
       </main>

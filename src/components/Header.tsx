@@ -6,7 +6,7 @@ export default function Header() {
   const location = useLocation();
 
   const getHeaderTitle = () => {
-    if (location.pathname === "/duplicate-search") {
+    if (location.pathname === "/duplicatesearch") {
       return "Leads Insights and Duplicate Search";
     }
     return "Lead Management";
