@@ -1,19 +1,16 @@
-import { useState } from 'react';
-import LineChart from '../components/charts/LineChart';
-import BarChart from '../components/charts/BarChart';
-import TableComponent from '../components/Table';
+// import LineChart from '../components/charts/LineChart';
+// import BarChart from '../components/charts/BarChart';
+// import TableComponent from '../components/Table';
 
 const Duplicate_search = () => {
-  const [isSearching, setIsSearching] = useState(false);
-
-  const handleSearchDuplicate = () => {
-    setIsSearching(true);
-    // Simulate search process
-    setTimeout(() => {
-      setIsSearching(false);
-      console.log("Duplicate search completed");
-    }, 2000);
-  };
+  // const handleSearchDuplicate = () => {
+  //   setIsSearching(true);
+  //   // Simulate search process
+  //   setTimeout(() => {
+  //     setIsSearching(false);
+  //     console.log("Duplicate search completed");
+  //   }, 2000);
+  // };
 
 
   return (
@@ -21,7 +18,7 @@ const Duplicate_search = () => {
       <main className="flex-1 w-full p-6">
         <div className="w-full max-w-7xl mx-auto">
           <div className="flex justify-end mb-4">
-            <button 
+            {/* <button 
               onClick={handleSearchDuplicate}
               disabled={isSearching}
               className="px-4 py-2 rounded-lg transition-colors shadow-md disabled:bg-gray-400 disabled:cursor-not-allowed"
@@ -30,22 +27,22 @@ const Duplicate_search = () => {
               onMouseLeave={(e) => !isSearching && (e.currentTarget.style.backgroundColor = '##059646ff')}
             >
               {isSearching ? 'Searching...' : 'Search for Duplicate'}
-            </button>
+            </button> */}
           </div>
-          {/* <div className="w-full">
+           <div className="w-full">
             <iframe
               width="1300"
               height="720"
               src="https://ap-south-1.quicksight.aws.amazon.com/sn/embed/share/accounts/831635639172/dashboards/8b16efa0-478d-4e1a-a5d9-e910c0d09b59?directory_alias=Casagranddatalake"
             >
             </iframe>
-          </div> */}
-          <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-xl p-6 border border-slate-200 dark:border-slate-700">
+          </div> 
+          {/* <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-xl p-6 border border-slate-200 dark:border-slate-700">
              {/* <h1 className="text-3xl font-bold text-slate-900 dark:text-slate-100 mb-6">
               Duplicate Search Analytics
             </h1> */}
             
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            {/* <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               <div className="bg-slate-50 dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-slate-700 p-4">
                 <h2 className="text-xl font-semibold text-slate-800 dark:text-slate-200 mb-4">
                   Leads Data & Hourly Breakup
@@ -73,8 +70,8 @@ const Duplicate_search = () => {
                 </h2>
                 <TableComponent />
               </div>
-            </div> 
-          </div>  
+            </div>  */}
+          {/* </div>   */}
         </div>
       </main>
     </div>
